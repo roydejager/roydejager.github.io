@@ -1,0 +1,457 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica", "Arial";
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+strong,
+em {
+  margin: 0 0 20px 0;
+  padding: 0;
+  line-height: 1.6; }
+
+p {
+  font-size: 15px;
+  color: white; }
+  @media only screen and (min-width: 851px) {
+    p {
+      font-size: 15px; } }
+  @media only screen and (min-width: 1441px) and (max-width: 1920px) {
+    p {
+      font-size: 20px; } }
+
+h1 {
+  line-height: 45px;
+  font-size: 45px;
+  color: white; }
+  @media only screen and (min-width: 1441px) and (max-width: 1920px) {
+    h1 {
+      font-size: 60px; } }
+
+.bottom-text {
+  color: white;
+  font-size: 15px;
+  font-weight: bold; }
+  @media only screen and (min-width: 1441px) and (max-width: 1920px) {
+    .bottom-text {
+      font-size: 20px; } }
+
+.container {
+  max-width: 1280px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin: auto; }
+
+body {
+  background-color: white; }
+
+@media only screen and (max-width: 850px) {
+  .top {
+    padding-top: 50px; } }
+
+.page-container {
+  left: 0;
+  width: 100vw;
+  cursor: auto; }
+  @media only screen and (max-width: 850px) {
+    .page-container {
+      margin-top: -30px;
+      margin-left: -10px;
+      padding: 10px 20px 10px 0px;
+      height: 0;
+      visibility: hidden;
+      display: none; } }
+  @media only screen and (min-width: 851px) {
+    .page-container {
+      top: 300vh;
+      min-height: 600px;
+      height: 100vh;
+      padding: 20px 20px 20px 20px;
+      position: absolute;
+      width: 100vw;
+      -moz-transition: all 0.3s ease-in;
+      -o-transition: all 0.3s ease-in;
+      -webkit-transition: all 0.3s ease-in;
+      transition: all 0.3s ease-in; } }
+
+.block.active .page-container {
+  visibility: visible;
+  display: inline-block;
+  -moz-transition: all 0.5s ease-in;
+  -o-transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in; }
+  @media only screen and (max-width: 850px) {
+    .block.active .page-container {
+      height: 100%; } }
+  @media only screen and (min-width: 851px) {
+    .block.active .page-container {
+      top: 0;
+      padding-top: 20px;
+      width: 100vw; } }
+
+.white-page {
+  background-color: #F2F2F2; }
+
+@media only screen and (max-width: 850px) {
+  .white-page {
+    padding: 20px 10px 20px 10px;
+    margin-top: 10px;
+    height: 100%;
+    width: 100%; } }
+  @media only screen and (min-width: 851px) {
+    .white-page {
+      padding: 30px 30px 30px 30px;
+      height: 100%;
+      width: 100%;
+      visibility: visible;
+      margin-right: 100px; } }
+
+.block.active .white-page {
+  background-color: #F2F2F2; }
+
+@media only screen and (max-width: 850px) {
+  .block.active .white-page {
+    margin-top: 10px; } }
+
+.close-button svg {
+  cursor: pointer;
+  fill: #D9D9D9;
+  width: 60px;
+  height: 60px;
+  visibility: hidden;
+  opacity: 0; }
+  @media only screen and (max-width: 850px) {
+    .close-button svg {
+      float: right;
+      right: 0;
+      z-index: 2;
+      stroke-width: 10; } }
+  @media only screen and (min-width: 851px) {
+    .close-button svg {
+      top: 0;
+      right: 0;
+      float: right;
+      z-index: 1000; }
+      .close-button svg:hover {
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+        fill: #707070;
+        stroke: #707070;
+        stroke-width: 10; } }
+
+.block.active .close-button svg {
+  opacity: 1;
+  visibility: visible;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
+  @media only screen and (max-width: 850px) {
+    .block.active .close-button svg {
+      fill: #707070;
+      stroke-width: 0;
+      stroke: #707070; } }
+
+.page-title {
+  left: 0;
+  top: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica", "Arial";
+  font-weight: bold;
+  font-size: 45px;
+  padding-bottom: 10px; }
+
+.button-container {
+  width: 100%;
+  display: block; }
+
+.github svg {
+  zoom: 10%;
+  fill: black;
+  margin-top: 130px; }
+
+.linkedin svg {
+  fill: black;
+  cursor: pointer;
+  zoom: 25%; }
+
+.email svg {
+  fill: black;
+  cursor: pointer;
+  zoom: 25%; }
+
+.facebook svg {
+  fill: black;
+  margin-top: 20px; }
+
+.block:nth-child(1) {
+  left: 0%; }
+
+.block:nth-child(2) {
+  left: 25%; }
+
+.block:nth-child(3) {
+  left: 50%; }
+
+.block:nth-child(4) {
+  left: 75%; }
+
+.row:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+.row .block {
+  background-color: #bfbfbf;
+  overflow: hidden; }
+  @media only screen and (max-width: 850px) {
+    .row .block {
+      position: relative;
+      padding: 20px 20px 0px 20px;
+      height: 300px;
+      left: 0; }
+      .row .block h1 {
+        margin-top: 15px; }
+      .row .block .bottom-text {
+        position: absolute;
+        bottom: 0;
+        padding-bottom: 50px;
+        visibility: visible; }
+      .row .block .expand svg {
+        fill: white; } }
+  @media only screen and (min-width: 851px) {
+    .row .block {
+      float: left;
+      position: relative;
+      width: 25%;
+      margin-left: 0%;
+      height: 100vh;
+      padding: 45px 30px 100px 30px;
+      position: absolute;
+      display: inline-block;
+      min-height: 500px;
+      z-index: -1;
+      -moz-transition: left 0.2s ease-in 0.3s, width 0.2s ease-in 0.3s, z-index 0.2s ease-in 0.3s;
+      -o-transition: left 0.2s ease-in 0.3s, width 0.2s ease-in 0.3s, z-index 0.2s ease-in 0.3s;
+      -webkit-transition: left 0.2s ease-in 0.3s, width 0.2s ease-in 0.3s, z-index 0.2s ease-in 0.3s;
+      transition: left 0.2s ease-in 0.3s, width 0.2s ease-in 0.3s, z-index 0.2s ease-in 0.3s; }
+      .row .block p {
+        opacity: 1;
+        color: rgba(255, 255, 255, 0.2);
+        -moz-transition: color 0.2s ease-in, opacity 0.2s ease-in 0.6s;
+        -o-transition: color 0.2s ease-in, opacity 0.2s ease-in 0.6s;
+        -webkit-transition: color 0.2s ease-in, opacity 0.2s ease-in 0.6s;
+        transition: color 0.2s ease-in, opacity 0.2s ease-in 0.6s; }
+      .row .block h1 {
+        color: white;
+        opacity: 1; }
+      .row .block .bottom-text {
+        padding: 0 0 30px 30px;
+        width: 100%;
+        left: 0;
+        opacity: 1;
+        color: rgba(255, 255, 255, 0.4);
+        bottom: 0;
+        position: absolute;
+        visibility: visible;
+        -moz-transition: color 0.2s ease-in, padding 0.2s ease-in, background-color 0.2s ease-out, opacity 0.2s ease-in 0.6s;
+        -o-transition: color 0.2s ease-in, padding 0.2s ease-in, background-color 0.2s ease-out, opacity 0.2s ease-in 0.6s;
+        -webkit-transition: color 0.2s ease-in, padding 0.2s ease-in, background-color 0.2s ease-out, opacity 0.2s ease-in 0.6s;
+        transition: color 0.2s ease-in, padding 0.2s ease-in, background-color 0.2s ease-out, opacity 0.2s ease-in 0.6s; } }
+
+@media only screen and (min-width: 851px) {
+  h1, .expand svg {
+    opacity: 1;
+    -moz-transition: opacity 0.2s ease-in 0.6s;
+    -o-transition: opacity 0.2s ease-in 0.6s;
+    -webkit-transition: opacity 0.2s ease-in 0.6s;
+    transition: opacity 0.2s ease-in 0.6s; } }
+
+.block.active {
+  left: 0;
+  z-index: 5000;
+  width: 100%;
+  cursor: auto;
+  overflow: hidden;
+  -moz-transition: left 0.2s ease-in, width 0.2s ease-in, z-index 0.1s ease-in;
+  -o-transition: left 0.2s ease-in, width 0.2s ease-in, z-index 0.1s ease-in;
+  -webkit-transition: left 0.2s ease-in, width 0.2s ease-in, z-index 0.1s ease-in;
+  transition: left 0.2s ease-in, width 0.2s ease-in, z-index 0.1s ease-in; }
+  @media only screen and (max-width: 850px) {
+    .block.active {
+      height: 100%; }
+      .block.active h1, .block.active p {
+        display: none; } }
+  @media only screen and (min-width: 851px) {
+    .block.active .bottom-text, .block.active p, .block.active h1, .block.active .expand svg {
+      opacity: 0;
+      -moz-transition: opacity 0s ease-in;
+      -o-transition: opacity 0s ease-in;
+      -webkit-transition: opacity 0s ease-in;
+      transition: opacity 0s ease-in; } }
+
+@media only screen and (min-width: 851px) {
+  .block::before {
+    content: " ";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    -moz-transition: background 0.2s ease-in;
+    -o-transition: background 0.2s ease-in;
+    -webkit-transition: background 0.2s ease-in;
+    transition: background 0.2s ease-in; } }
+
+.block.hover.active p, .block.hover.active .bottom-text, .block.active.hover p, .block.active.hover .bottom-text {
+  opacity: 0;
+  -moz-transition: opacity 0s ease-in;
+  -o-transition: opacity 0s ease-in;
+  -webkit-transition: opacity 0s ease-in;
+  transition: opacity 0s ease-in; }
+
+.block.hover {
+  cursor: pointer; }
+  @media only screen and (min-width: 851px) {
+    .block.hover p, .block.hover .expand svg {
+      color: white;
+      fill: white;
+      -moz-transition: color 0.2s ease-in, fill 0.2s ease-out, opacity 0.2s ease-in 0.6s;
+      -o-transition: color 0.2s ease-in, fill 0.2s ease-out, opacity 0.2s ease-in 0.6s;
+      -webkit-transition: color 0.2s ease-in, fill 0.2s ease-out, opacity 0.2s ease-in 0.6s;
+      transition: color 0.2s ease-in, fill 0.2s ease-out, opacity 0.2s ease-in 0.6s; }
+    .block.hover .bottom-text {
+      padding: 30px 0 30px 30px;
+      width: 100%;
+      left: 0;
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.2);
+      color: white;
+      -moz-transition: color 0.2s ease-in, padding 0.2s ease-out, opacity 0.2s ease-in 0.6s;
+      -o-transition: color 0.2s ease-in, padding 0.2s ease-out, opacity 0.2s ease-in 0.6s;
+      -webkit-transition: color 0.2s ease-in, padding 0.2s ease-out, opacity 0.2s ease-in 0.6s;
+      transition: color 0.2s ease-in, padding 0.2s ease-out, opacity 0.2s ease-in 0.6s; } }
+
+@media only screen and (min-width: 851px) {
+  .block.no-hover::before {
+    background: rgba(0, 0, 0, 0.4);
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    z-index: 10000; } }
+
+.expand svg {
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  fill: rgba(255, 255, 255, 0.4);
+  bottom: 0;
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.profile-container {
+  z-index: 500; }
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+  max-width: 120px;
+  margin-bottom: 5px; }
+
+.profile-text {
+  font-size: 16px;
+  line-height: 26px; }
+
+.interest-items {
+  line-height: 26px;
+  font-size: 16px; }
+
+.image-container {
+  height: 100vh;
+  display: flex;
+  width: 100%;
+  padding-bottom: 380px;
+  margin-bottom: -360px;
+  position: relative; }
+  @media only screen and (max-width: 850px) {
+    .image-container {
+      position: relative;
+      z-index: 1; } }
+
+.image {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%; }
+
+.interest-items ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.interest-items li {
+  list-style: none; }
+
+.row:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+@media only screen and (min-width: 851px) {
+  .row .profile {
+    float: left;
+    position: relative;
+    width: 50%;
+    margin-left: 0%;
+    z-index: 500; } }
+
+@media only screen and (max-width: 850px) {
+  .row .interests {
+    padding-top: 15px; } }
+
+@media only screen and (min-width: 851px) {
+  .row .interests {
+    float: left;
+    position: relative;
+    width: 25%;
+    margin-left: 0%;
+    padding-left: 40px; } }
