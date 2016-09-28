@@ -13,7 +13,8 @@ html {
   -moz-osx-font-smoothing: grayscale; }
 
 body {
-  font-family: "HelveticaNeue-Light", "Helvetica", "Arial";
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
   color: #333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -42,6 +43,8 @@ p {
       font-size: 20px; } }
 
 h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
   line-height: 45px;
   font-size: 45px;
   color: white; }
@@ -50,6 +53,7 @@ h1 {
       font-size: 60px; } }
 
 .bottom-text {
+  font-family: "Raleway", sans-serif;
   color: white;
   font-size: 15px;
   font-weight: bold; }
@@ -135,11 +139,18 @@ body {
   .block.active .white-page {
     margin-top: 10px; } }
 
+.close-button {
+  width: 60px;
+  height: 60px;
+  float: right;
+  border-radius: 50%; }
+
 .close-button svg {
   cursor: pointer;
   fill: #D9D9D9;
   width: 60px;
   height: 60px;
+  border-radius: 50%;
   visibility: hidden;
   opacity: 0; }
   @media only screen and (max-width: 850px) {
@@ -258,10 +269,10 @@ body {
       display: inline-block;
       min-height: 500px;
       z-index: -1;
-      -moz-transition: left 0.2s ease-in 0.3s, width 0.2s ease-in 0.3s, z-index 0.2s ease-in 0.3s;
-      -o-transition: left 0.2s ease-in 0.3s, width 0.2s ease-in 0.3s, z-index 0.2s ease-in 0.3s;
-      -webkit-transition: left 0.2s ease-in 0.3s, width 0.2s ease-in 0.3s, z-index 0.2s ease-in 0.3s;
-      transition: left 0.2s ease-in 0.3s, width 0.2s ease-in 0.3s, z-index 0.2s ease-in 0.3s; }
+      -moz-transition: left 0.2s ease-out 0.3s, width 0.2s ease-out 0.3s, z-index 0.2s ease-out 0.3s;
+      -o-transition: left 0.2s ease-out 0.3s, width 0.2s ease-out 0.3s, z-index 0.2s ease-out 0.3s;
+      -webkit-transition: left 0.2s ease-out 0.3s, width 0.2s ease-out 0.3s, z-index 0.2s ease-out 0.3s;
+      transition: left 0.2s ease-out 0.3s, width 0.2s ease-out 0.3s, z-index 0.2s ease-out 0.3s; }
       .row .block p {
         opacity: 1;
         color: rgba(255, 255, 255, 0.2);

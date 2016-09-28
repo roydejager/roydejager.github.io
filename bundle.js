@@ -10079,28 +10079,6 @@ var $ = require('jquery');
 
 var block = $('.block');
 
-// $(window).bind("pageshow", function(event) {
-//     if (event.originalEvent.persisted) {
-//         window.location.reload()
-//     }
-// });
-
-
-$(document).ready(function () {
-
-    var hash = window.location.hash;
-    if (hash === '') {
-        $('#block-1').removeClass('active');
-    }
-    if (hash === '#about') {
-        console.log('hoi');
-        $('#block-1').addClass('active');
-        $('#block-1').css('transition', 'none');
-        $('.page-container').css('transition', 'none');
-        console.log('doei');
-    }
-});
-
 $(document).ready(function () {
     var colors = ["#442F66", '#68489C', '#9365DB', '#003322', '#00704B', '#00A36D', '#006169',
         '#008E99', '#00B2BF', '#346327', '#51993C', '#66C24D', '#6E5303', '#A67E05',
@@ -10116,6 +10094,7 @@ $(document).ready(function () {
     });
 });
 
+
 block.hover(function () {
     if (block.not('active')) {
         var $this = $(this);
@@ -10123,6 +10102,7 @@ block.hover(function () {
         block.not($this).toggleClass("no-hover");
     }
 });
+
 
 block.click(function () {
     var $this = $(this);
@@ -10138,9 +10118,9 @@ block.click(function () {
 
 });
 
-$('#block-1').click(function () {
-    window.location.hash = '#about';
 
+block.click(function () {
+    window.location.hash = $(this).attr("id");
 });
 
 
@@ -10148,17 +10128,16 @@ $('#block-1').click(function () {
 var $ = require('jquery');
 
 
-$('.close-button svg').click(function (e) {
+$('.close-button svg').click(function(e) {
     var block = $('.block');
 
     block.not(this).css('display', 'block');
     block.removeClass('active');
-    $('#block-1').css('transition', '');
+
+    block.css('transition', '');
     $('.page-container').css('transition', '');
-    window.location.hash="";
-    // $('html, body').animate({
-    //     scrollTop: $('.block').offset().top - 20
-    // }, 'slow');
+
+    window.location.hash = "";
 
     e.stopPropagation();
 });
@@ -10173,7 +10152,28 @@ $(".button").hover(function () {
     $this.toggleClass("active");
 });
 },{"jquery":1}],5:[function(require,module,exports){
+var $ = require('jquery');
+
+var block = $('.block');
+
+$(document).ready(function () {
+    var hash = window.location.hash;
+    // location.hash.replace(/^#/, '');
+    if (hash === '') {
+        $('.block').removeClass('active');
+    }
+    block.each(function () {
+        if (hash === $(this).attr("id")) {
+
+            $(this).addClass('active');
+            $(this).css('transition', 'none');
+            $('.page-container').css('transition', 'none');
+        }
+    });
+});
+},{"jquery":1}],6:[function(require,module,exports){
 var block = require('./components/block');
 var closeButton = require('./components/closeButton');
 var contactButton = require('./components/contactbutton');
-},{"./components/block":2,"./components/closeButton":3,"./components/contactbutton":4}]},{},[5])
+var hash = require('./components/hash');
+},{"./components/block":2,"./components/closeButton":3,"./components/contactbutton":4,"./components/hash":5}]},{},[6])
