@@ -10081,8 +10081,7 @@ var block = $('.block');
 
 
 $(document).ready(function () {
-    var colors = ["#3b2857", '#9365DB', '#00A36D', '#008E99', '#00B2BF', '#dfa907', '#D6762E', '#6E2D27', '#DE5C50',
-                    '#A544AD', '#004166', '#008DDE'];
+    var colors = ["#3b2857", '#00A36D', '#008E99', '#dfa907', '#D6762E', '#6E2D27', '#da4b3e', '#004166'];
 
     block.each(function () {
         var i = colors[Math.floor(Math.random() * colors.length)];
