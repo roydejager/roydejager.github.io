@@ -259,7 +259,15 @@ body {
         padding-bottom: 30px;
         visibility: visible; }
       .row .block .expand svg {
-        fill: white; } }
+        fill: white;
+        bottom: 0;
+        position: absolute;
+        margin-bottom: 33px;
+        -moz-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg); } }
   @media only screen and (min-width: 851px) {
     .row .block {
       float: left;
@@ -298,7 +306,21 @@ body {
         -moz-transition: color 0.2s ease-in, padding-top 0.2s ease-in, background-color 0.2s ease-out, opacity 0.2s ease-in 0.6s;
         -o-transition: color 0.2s ease-in, padding-top 0.2s ease-in, background-color 0.2s ease-out, opacity 0.2s ease-in 0.6s;
         -webkit-transition: color 0.2s ease-in, padding-top 0.2s ease-in, background-color 0.2s ease-out, opacity 0.2s ease-in 0.6s;
-        transition: color 0.2s ease-in, padding-top 0.2s ease-in, background-color 0.2s ease-out, opacity 0.2s ease-in 0.6s; } }
+        transition: color 0.2s ease-in, padding-top 0.2s ease-in, background-color 0.2s ease-out, opacity 0.2s ease-in 0.6s; }
+      .row .block .expand svg {
+        bottom: 0;
+        position: absolute;
+        margin-bottom: 33px;
+        fill: rgba(255, 255, 255, 0.4);
+        -moz-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        -moz-transition: fill 0.2s ease-out;
+        -o-transition: fill 0.2s ease-out;
+        -webkit-transition: fill 0.2s ease-out;
+        transition: fill 0.2s ease-out; } }
 
 @media only screen and (min-width: 851px) {
   h1, .expand svg {
@@ -346,7 +368,7 @@ body {
     -webkit-transition: background 0.2s ease-in;
     transition: background 0.2s ease-in; } }
 
-.block.hover.active p, .block.hover.active .bottom-text, .block.active.hover p, .block.active.hover .bottom-text {
+.block.hover.active p, .block.hover.active .bottom-text, .block.hover.active .expand svg, .block.active.hover p, .block.active.hover .bottom-text, .block.active.hover .expand svg {
   opacity: 0;
   -moz-transition: opacity 0s ease-in;
   -o-transition: opacity 0s ease-in;
@@ -359,10 +381,10 @@ body {
     .block.hover p, .block.hover .expand svg {
       color: white;
       fill: white;
-      -moz-transition: color 0.2s ease-in, fill 0.2s ease-out, opacity 0.2s ease-in 0.6s;
-      -o-transition: color 0.2s ease-in, fill 0.2s ease-out, opacity 0.2s ease-in 0.6s;
-      -webkit-transition: color 0.2s ease-in, fill 0.2s ease-out, opacity 0.2s ease-in 0.6s;
-      transition: color 0.2s ease-in, fill 0.2s ease-out, opacity 0.2s ease-in 0.6s; }
+      -moz-transition: color 0.2s ease-in, fill 0.2s ease-in, opacity 0.2s ease-in 0.6s;
+      -o-transition: color 0.2s ease-in, fill 0.2s ease-in, opacity 0.2s ease-in 0.6s;
+      -webkit-transition: color 0.2s ease-in, fill 0.2s ease-in, opacity 0.2s ease-in 0.6s;
+      transition: color 0.2s ease-in, fill 0.2s ease-in, opacity 0.2s ease-in 0.6s; }
     .block.hover .bottom-text {
       padding-top: 30px;
       width: 100%;
@@ -383,21 +405,6 @@ body {
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     z-index: 10000; } }
-
-.expand svg {
-  bottom: 0;
-  position: absolute;
-  margin-bottom: 33px;
-  fill: rgba(255, 255, 255, 0.4);
-  -moz-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  transform: rotate(270deg);
-  -moz-transition: fill 0.2s ease-out;
-  -o-transition: fill 0.2s ease-out;
-  -webkit-transition: fill 0.2s ease-out;
-  transition: fill 0.2s ease-out; }
 
 .profile-container {
   z-index: 500; }
