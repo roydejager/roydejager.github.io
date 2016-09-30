@@ -255,7 +255,8 @@ body {
       .row .block .bottom-text {
         position: absolute;
         bottom: 0;
-        padding-bottom: 50px;
+        padding-left: 15px;
+        padding-bottom: 30px;
         visibility: visible; }
       .row .block .expand svg {
         fill: white; } }
@@ -320,7 +321,7 @@ body {
   @media only screen and (max-width: 850px) {
     .block.active {
       height: 100%; }
-      .block.active h1, .block.active p {
+      .block.active h1, .block.active p, .block.active .bottom-text, .block.active .expand svg {
         display: none; } }
   @media only screen and (min-width: 851px) {
     .block.active .bottom-text, .block.active p, .block.active h1, .block.active .expand svg {
