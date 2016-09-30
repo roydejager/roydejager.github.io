@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <script>
-      httpsProtocol();
+        var host = "www.roydejager.com";
+        if ((host == window.location.host) && (window.location.protocol != "https:"))
+            window.location.protocol = "https";
     </script>
     <meta name="description"
           content="A frontend developer with a lot of passion to make awesome websites and a deep love for coffee.">
