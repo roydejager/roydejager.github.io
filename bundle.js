@@ -10081,7 +10081,7 @@ var block = $('.block');
 
 
 $(document).ready(function () {
-    var colors = ["#3b2857", '#00A36D', '#008E99', '#dfa907', '#D6762E', '#6E2D27', '#da4b3e', '#004166'];
+    var colors = ["#3b2857", '#00A36D', '#008E99', '#dfa907', '#D6762E', '#6E2D27', '#004166'];
 
     block.each(function () {
         var i = colors[Math.floor(Math.random() * colors.length)];
@@ -10103,6 +10103,8 @@ block.hover(function () {
 block.click(function () {
     var $this = $(this);
 
+    document.title = $this.attr('id');
+    document.title.replace('#', 'fwefew');
     $this.addClass('active');
     block.not(this).removeClass('active');
 
@@ -10119,13 +10121,13 @@ block.click(function () {
 var $ = require('jquery');
 
 
-$('.close-button svg').click(function(e) {
+$('.close-button').click(function(e) {
     var block = $('.block');
 
     block.removeClass('active');
     $('.block, .page-container').css('transition', '');
     window.location.hash = "";
-
+    document.title = "";
     e.stopPropagation();
 });
 
@@ -10146,6 +10148,7 @@ var block = $('.block');
 $(document).ready(function () {
     var hash = window.location.hash;
 
+
     block.each(function () {
         if (hash === $(this).attr("id")) {
             $(this).addClass('active');
@@ -10163,4 +10166,5 @@ var block = require('./components/block');
 var closeButton = require('./components/closeButton');
 var contactButton = require('./components/contactbutton');
 var hash = require('./components/hash');
+
 },{"./components/block":2,"./components/closeButton":3,"./components/contactbutton":4,"./components/hash":5}]},{},[6])
