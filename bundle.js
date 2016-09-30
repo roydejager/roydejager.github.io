@@ -10103,14 +10103,12 @@ block.hover(function () {
 block.click(function () {
     var $this = $(this);
 
-    document.title = $this.attr('id');
-    document.title.replace('#', 'fwefew');
     $this.addClass('active');
     block.not(this).removeClass('active');
 
     $('html, body').animate({
         scrollTop: $this.offset().top
-    }, 100);
+    }, 0);
 });
 
 
@@ -10120,15 +10118,25 @@ block.click(function () {
 },{"jquery":1}],3:[function(require,module,exports){
 var $ = require('jquery');
 
-
-$('.close-button').click(function(e) {
+function closeButton() {
     var block = $('.block');
 
     block.removeClass('active');
     $('.block, .page-container').css('transition', '');
     window.location.hash = "";
     document.title = "";
+}
+
+$('.close-button').click(function (e) {
+    var block = $('.block');
+    closeButton();
     e.stopPropagation();
+});
+
+$(document).keydown(function (e) {
+    if (e.keyCode === 27) {
+        closeButton();
+    }
 });
 
 
@@ -10148,9 +10156,8 @@ var block = $('.block');
 $(document).ready(function () {
     var hash = window.location.hash;
 
-
     block.each(function () {
-        if (hash === $(this).attr("id")) {
+        if (hash === $(this).attr('id')) {
             $(this).addClass('active');
             $(this).css('transition', 'none');
             $('.page-container').css('transition', 'none');
@@ -10158,13 +10165,47 @@ $(document).ready(function () {
     });
 });
 
+
 block.click(function () {
-    window.location.hash = $(this).attr("id");
+    history.pushState(null, null, $(this).attr("id"));
+});
+
+
+$(window).on('popstate', function (e) {
+    var state = e.originalEvent.state;
+
+    console.log(state);
+    if (state === null) {
+        if (window.location.hash === '') {
+            block.removeClass('active');
+            block.css('transition', '');
+            $('.page-container').css('transition', '');
+
+        } else {
+            block.each(function () {
+                if (window.location.hash === $(this).attr('id')) {
+                    $(this).addClass('active');
+                    if ($(window).width() < 850) {
+                        block.not(this).removeClass('active');
+                        $('html, body').animate({
+                            scrollTop: $(this).offset().top
+                        }, 100);
+                    }
+                }
+            });
+        }
+    }
 });
 },{"jquery":1}],6:[function(require,module,exports){
+function httpsProtocol() {
+    var host = "www.roydejager.com";
+    if ((host == window.location.host) && (window.location.protocol != "https:"))
+        window.location.protocol = "https";
+}
+},{}],7:[function(require,module,exports){
 var block = require('./components/block');
 var closeButton = require('./components/closeButton');
 var contactButton = require('./components/contactbutton');
 var hash = require('./components/hash');
-
-},{"./components/block":2,"./components/closeButton":3,"./components/contactbutton":4,"./components/hash":5}]},{},[6])
+var https = require('./components/https');
+},{"./components/block":2,"./components/closeButton":3,"./components/contactbutton":4,"./components/hash":5,"./components/https":6}]},{},[7])
