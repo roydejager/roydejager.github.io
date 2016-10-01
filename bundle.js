@@ -10092,11 +10092,19 @@ $(document).ready(function () {
 });
 
 
-block.hover(function () {
+block.mouseover(function () {
     var $this = $(this);
 
-    $this.toggleClass("hover");
-    block.not($this).toggleClass("no-hover");
+    $this.addClass('hover');
+    block.not($this).addClass('no-hover');
+
+    block.mouseleave(function () {
+        $this.removeClass('hover');
+        block.not($this).removeClass('no-hover');
+    })
+
+
+
 });
 
 
@@ -10123,12 +10131,10 @@ function closeButton() {
 
     block.removeClass('active');
     $('.block, .page-container').css('transition', '');
-
     history.pushState(null, null, ' ');
 }
 
 $('.close-button').click(function (e) {
-    var block = $('.block');
     closeButton();
     e.stopPropagation();
 });
@@ -10161,6 +10167,7 @@ $(document).ready(function () {
     } else {
         block.each(function () {
             if (hash === $(this).attr('id')) {
+                history.pushState(null, null, $(this).attr('id'));
                 $(this).addClass('active');
                 $(this).css('transition', 'none');
                 $('.page-container').css('transition', 'none');
@@ -10186,6 +10193,7 @@ $(window).on('popstate', function (e) {
             $('.page-container').css('transition', '');
             history.replaceState(null, null, ' ');
 
+
         } else {
             block.each(function () {
                 if (window.location.hash === $(this).attr('id')) {
@@ -10202,15 +10210,8 @@ $(window).on('popstate', function (e) {
     }
 });
 },{"jquery":1}],6:[function(require,module,exports){
-function httpsProtocol() {
-    var host = "www.roydejager.com";
-    if ((host == window.location.host) && (window.location.protocol != "https:"))
-        window.location.protocol = "https";
-}
-},{}],7:[function(require,module,exports){
 var block = require('./components/block');
 var closeButton = require('./components/closeButton');
 var contactButton = require('./components/contactbutton');
 var hash = require('./components/hash');
-var https = require('./components/https');
-},{"./components/block":2,"./components/closeButton":3,"./components/contactbutton":4,"./components/hash":5,"./components/https":6}]},{},[7])
+},{"./components/block":2,"./components/closeButton":3,"./components/contactbutton":4,"./components/hash":5}]},{},[6])
