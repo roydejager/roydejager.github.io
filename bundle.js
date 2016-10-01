@@ -10139,6 +10139,7 @@ $('.close-button').click(function (e) {
     e.stopPropagation();
 });
 
+
 $(document).keydown(function (e) {
 
     if (e.keyCode === 27) {
