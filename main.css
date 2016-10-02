@@ -79,15 +79,18 @@ body {
 .page-container {
   left: 0;
   width: 100vw;
-  cursor: auto; }
+  cursor: auto;
+  visibility: hidden; }
   @media only screen and (max-width: 850px) {
     .page-container {
       margin-top: -30px;
       margin-left: -10px;
-      padding: 10px 20px 10px 0px;
-      height: 0;
+      padding: 110vh 20px 10px 0px;
       visibility: hidden;
-      display: none; } }
+      -moz-transition: padding-top 0.3s ease-out;
+      -o-transition: padding-top 0.3s ease-out;
+      -webkit-transition: padding-top 0.3s ease-out;
+      transition: padding-top 0.3s ease-out; } }
   @media only screen and (min-width: 851px) {
     .page-container {
       top: 200vh;
@@ -102,20 +105,21 @@ body {
       transition: all 0.5s ease-out; } }
 
 .block.active .page-container {
-  visibility: visible;
-  display: inline-block;
-  -moz-transition: all 0.5s ease-in;
-  -o-transition: all 0.5s ease-in;
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in; }
+  visibility: visible; }
   @media only screen and (max-width: 850px) {
     .block.active .page-container {
-      height: 100%; } }
+      padding-top: 10px;
+      -moz-transition: all 0.3s ease-in 0.2s;
+      -o-transition: all 0.3s ease-in 0.2s;
+      -webkit-transition: all 0.3s ease-in 0.2s;
+      transition: all 0.3s ease-in 0.2s; } }
   @media only screen and (min-width: 851px) {
     .block.active .page-container {
       top: 0;
-      padding-top: 20px;
-      width: 100vw; } }
+      -moz-transition: all 0.5s ease-in;
+      -o-transition: all 0.5s ease-in;
+      -webkit-transition: all 0.5s ease-in;
+      transition: all 0.5s ease-in; } }
 
 .white-page {
   background-color: #F2F2F2; }
@@ -134,24 +138,12 @@ body {
       visibility: visible;
       margin-right: 100px; } }
 
-.block.active .white-page {
-  background-color: #F2F2F2; }
-
-@media only screen and (max-width: 850px) {
-  .block.active .white-page {
-    margin-top: 10px; } }
-
-.close-button {
-  width: 60px;
-  height: 60px;
-  float: right;
-  border-radius: 50%; }
-
 .close-button svg {
   cursor: pointer;
+  border: 1px solid #D9D9D9;
   fill: #D9D9D9;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   visibility: hidden;
   opacity: 0; }
@@ -159,10 +151,16 @@ body {
     .close-button svg {
       float: right;
       right: 0;
+      width: 60px;
+      height: 60px;
       z-index: 2;
-      stroke-width: 10; } }
+      padding-right: 10px;
+      margin-top: 6px; } }
   @media only screen and (min-width: 851px) {
     .close-button svg {
+      width: 40px;
+      height: 40px;
+      margin-top: 15px;
       top: 0;
       right: 0;
       float: right;
@@ -173,9 +171,9 @@ body {
         -ms-transform: rotate(180deg);
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
+        box-shadow: 0 0 0 4px #e1e1e1;
         fill: #707070;
-        stroke: #707070;
-        stroke-width: 10; } }
+        stroke: #707070; } }
 
 .block.active .close-button svg {
   opacity: 1;
@@ -188,7 +186,9 @@ body {
     .block.active .close-button svg {
       fill: #707070;
       stroke-width: 0;
-      stroke: #707070; } }
+      stroke: #707070;
+      border: none;
+      position: fixed; } }
 
 .page-title {
   left: 0;
@@ -246,28 +246,54 @@ body {
   overflow: hidden; }
   @media only screen and (max-width: 850px) {
     .row .block {
+      padding: 20px 20px 0 20px;
+      max-height: 300px;
+      left: 0;
       position: relative;
-      padding: 20px 20px 0px 20px;
-      height: 300px;
-      left: 0; }
+      -moz-transition: max-height 0.2s ease-out 0.4s;
+      -o-transition: max-height 0.2s ease-out 0.4s;
+      -webkit-transition: max-height 0.2s ease-out 0.4s;
+      transition: max-height 0.2s ease-out 0.4s; }
+      .row .block p {
+        opacity: 1;
+        padding-bottom: 50px;
+        -moz-transition: opacity 0.2s ease-in 0.7s;
+        -o-transition: opacity 0.2s ease-in 0.7s;
+        -webkit-transition: opacity 0.2s ease-in 0.7s;
+        transition: opacity 0.2s ease-in 0.7s; }
       .row .block h1 {
-        margin-top: 15px; }
+        opacity: 1;
+        margin-top: 15px;
+        -moz-transition: opacity 0.2s ease-in 0.7s;
+        -o-transition: opacity 0.2s ease-in 0.7s;
+        -webkit-transition: opacity 0.2s ease-in 0.7s;
+        transition: opacity 0.2s ease-in 0.7s; }
       .row .block .bottom-text {
         position: absolute;
         bottom: 0;
         padding-left: 15px;
+        opacity: 1;
         padding-bottom: 30px;
-        visibility: visible; }
+        visibility: visible;
+        -moz-transition: opacity 0.2s ease-in 0.7s;
+        -o-transition: opacity 0.2s ease-in 0.7s;
+        -webkit-transition: opacity 0.2s ease-in 0.7s;
+        transition: opacity 0.2s ease-in 0.7s; }
       .row .block .expand svg {
         fill: white;
         bottom: 0;
+        opacity: 1;
         position: absolute;
         margin-bottom: 33px;
         -moz-transform: rotate(270deg);
         -o-transform: rotate(270deg);
         -ms-transform: rotate(270deg);
         -webkit-transform: rotate(270deg);
-        transform: rotate(270deg); } }
+        transform: rotate(270deg);
+        -moz-transition: opacity 0.2s ease-in 0.7s;
+        -o-transition: opacity 0.2s ease-in 0.7s;
+        -webkit-transition: opacity 0.2s ease-in 0.7s;
+        transition: opacity 0.2s ease-in 0.7s; } }
   @media only screen and (min-width: 851px) {
     .row .block {
       float: left;
@@ -335,23 +361,33 @@ body {
   z-index: 5000;
   width: 100%;
   cursor: auto;
-  overflow: hidden;
-  -moz-transition: left 0.3s ease-out, width 0.3s ease-out, z-index 0.1s ease-in;
-  -o-transition: left 0.3s ease-out, width 0.3s ease-out, z-index 0.1s ease-in;
-  -webkit-transition: left 0.3s ease-out, width 0.3s ease-out, z-index 0.1s ease-in;
-  transition: left 0.3s ease-out, width 0.3s ease-out, z-index 0.1s ease-in; }
+  overflow: hidden; }
   @media only screen and (max-width: 850px) {
     .block.active {
-      height: 100%; }
+      max-height: 2500px;
+      -moz-transition: max-height 0.4s ease-in;
+      -o-transition: max-height 0.4s ease-in;
+      -webkit-transition: max-height 0.4s ease-in;
+      transition: max-height 0.4s ease-in; }
       .block.active h1, .block.active p, .block.active .bottom-text, .block.active .expand svg {
-        display: none; } }
+        opacity: 0;
+        position: absolute;
+        -moz-transition: opacity 0s ease-in;
+        -o-transition: opacity 0s ease-in;
+        -webkit-transition: opacity 0s ease-in;
+        transition: opacity 0s ease-in; } }
   @media only screen and (min-width: 851px) {
-    .block.active .bottom-text, .block.active p, .block.active h1, .block.active .expand svg {
-      opacity: 0;
-      -moz-transition: opacity 0s ease-in;
-      -o-transition: opacity 0s ease-in;
-      -webkit-transition: opacity 0s ease-in;
-      transition: opacity 0s ease-in; } }
+    .block.active {
+      -moz-transition: left 0.3s ease-out, width 0.3s ease-out, z-index 0.1s ease-in;
+      -o-transition: left 0.3s ease-out, width 0.3s ease-out, z-index 0.1s ease-in;
+      -webkit-transition: left 0.3s ease-out, width 0.3s ease-out, z-index 0.1s ease-in;
+      transition: left 0.3s ease-out, width 0.3s ease-out, z-index 0.1s ease-in; }
+      .block.active .bottom-text, .block.active p, .block.active h1, .block.active .expand svg {
+        opacity: 0;
+        -moz-transition: opacity 0s ease-in;
+        -o-transition: opacity 0s ease-in;
+        -webkit-transition: opacity 0s ease-in;
+        transition: opacity 0s ease-in; } }
 
 @media only screen and (min-width: 851px) {
   .block::before {
