@@ -10112,7 +10112,7 @@ block.click(function () {
 
     $this.addClass('active');
     block.not(this).removeClass('active');
-
+    $(this).css('cursor', 'auto');
     if (screen.width < 850) {
         $('html, body').animate({
             scrollTop: $this.offset().top
@@ -10133,6 +10133,7 @@ function closeButton() {
 
     block.removeClass('active');
     $('.block, .page-container').css('transition', '');
+    block.css('cursor', 'pointer');
     history.pushState(null, null, ' ');
     if (screen.width < 850) {
         block.css('display', 'block');
@@ -10148,8 +10149,8 @@ $('.close-button').click(function (e) {
 
 $(document).keydown(function (e) {
 
-    if (e.keyCode === 27) {
-        if (block.hasClass('active')) {
+    if (block.hasClass('active')) {
+        if (e.keyCode === 27) {
             closeButton();
         }
     }
@@ -10181,7 +10182,6 @@ $(document).ready(function () {
     } else {
         block.each(function () {
             if (hash === $(this).attr('id')) {
-                history.pushState(null, null, $(this).attr('id'));
                 $(this).addClass('active');
                 $(this).css('transition', 'none');
                 $('.page-container').css('transition', 'none');
@@ -10194,27 +10194,29 @@ $(document).ready(function () {
 });
 
 block.click(function () {
-    history.pushState(null, null, $(this).attr("id"));
+    if (window.location.hash !== $(this).attr('id')) {
+        history.pushState(null, null, $(this).attr("id"));
+    }
 });
-
 
 $(window).on('popstate', function (e) {
     var state = e.originalEvent.state;
 
-    console.log(state);
     if (state === null) {
         if (window.location.hash === '') {
             block.removeClass('active');
             block.css('transition', '');
             $('.page-container').css('transition', '');
             history.replaceState(null, null, ' ');
-            block.css('display', 'block');
-            // }
         } else {
             block.each(function () {
                 if (window.location.hash === $(this).attr('id')) {
                     $(this).addClass('active');
+                    $(this).css('cursor', 'auto');
                     block.not(this).removeClass('active');
+                    if ($(this).hasClass('no-hover')) {
+                        $(this).removeClass('no-hover');
+                    }
                     if (screen.width < 850) {
                         block.not(this).css('display', 'none');
                     }
@@ -10223,6 +10225,7 @@ $(window).on('popstate', function (e) {
         }
     }
 });
+
 },{"jquery":1}],6:[function(require,module,exports){
 var block = require('./components/block');
 var closeButton = require('./components/closeButton');
